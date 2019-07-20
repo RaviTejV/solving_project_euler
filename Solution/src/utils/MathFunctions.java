@@ -1,5 +1,6 @@
 package utils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +34,17 @@ public class MathFunctions {
 		}
 		
 		return returnMap;
+	}
+
+	public static List<Integer> getAllDivisors(Integer x) {
+		
+		List<Integer> retList = new ArrayList<>();
+		
+		for(int i = 1 ; i < x; i++ ){
+			if(x % i == 0) retList.add(new Integer(i));
+		}
+		
+		return retList;
 	}
 
 }
