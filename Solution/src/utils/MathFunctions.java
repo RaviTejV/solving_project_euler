@@ -47,4 +47,18 @@ public class MathFunctions {
 		return retList;
 	}
 
+	public static int simpleFactorial(int x) {
+		
+		if(x < 2) return 1; 
+		
+		int result = 1;
+		
+		while (x > 0) {
+			result*=x;
+			x--;
+		}
+		
+		return result;
+	}
+
 }
