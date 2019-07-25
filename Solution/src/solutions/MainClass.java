@@ -4,7 +4,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		new SolutionFor37().solve();;
+		new SolutionFor38().solve();;
 	}
 
 }
