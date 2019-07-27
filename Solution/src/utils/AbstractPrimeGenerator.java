@@ -24,4 +24,12 @@ public abstract class AbstractPrimeGenerator {
 	public boolean isPrime(Long x){		
 		return Collections.binarySearch(primes, x) < 0 ? false:true;
 	}
+	
+	public boolean isPrimeLong(Long x){
+		for(Long prime: primes){
+			if (x%prime == 0) return false;
+		}
+		
+		return true;
+	}
 }
