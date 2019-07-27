@@ -61,4 +61,13 @@ public class MathFunctions {
 		return result;
 	}
 
+	public static Integer simplePower(int i, int j) {
+		int returnVal = 1;
+		while(j-- > 0){
+			returnVal*=i;
+		}
+		
+		return returnVal;
+	}
+
 }
