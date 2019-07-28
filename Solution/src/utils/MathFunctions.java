@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 
 public class MathFunctions {
@@ -35,7 +37,25 @@ public class MathFunctions {
 		
 		return returnMap;
 	}
-
+	
+	public static Set<Long> getPrimeFactors(Long x) {
+		List<Long> primes = pg.getAllPrimesTill(x+1);
+		
+		Set<Long> returnSet = new TreeSet<>();
+		
+		for(Long prime: primes){
+			while(x % prime == 0){
+				x/=prime;
+				returnSet.add(prime);
+			}
+			
+			if(x == 1)
+				break;
+		}
+		
+		return returnSet;
+	}
+	
 	public static List<Integer> getAllDivisors(Integer x) {
 		
 		List<Integer> retList = new ArrayList<>();
