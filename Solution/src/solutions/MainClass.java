@@ -4,7 +4,11 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		new SolutionFor42().solve();;
+		try {
+			new SolutionFor45().solve();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

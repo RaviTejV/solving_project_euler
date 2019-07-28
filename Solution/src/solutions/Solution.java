@@ -2,6 +2,6 @@ package solutions;
 
 public interface Solution {
 	
-	void solve();
+	void solve() throws Exception;
 
 }
