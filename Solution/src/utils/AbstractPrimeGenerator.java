@@ -32,9 +32,11 @@ public abstract class AbstractPrimeGenerator {
 	}
 
 	public boolean isPrimeLong(Long x) {
+		
+		long sqrt = (long) Math.sqrt(x) + 1;
 		for (Long prime : primes) {
 			
-			if(prime >= x) return true;
+			if(prime >= sqrt) return true;
 			if (x % prime == 0)
 				return false;
 		}
