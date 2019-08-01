@@ -6,31 +6,41 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import cards.PokerGame;
+
 public class SolutionFor54 implements Solution {
 
 	@Override
 	public void solve() throws Exception {
 		try (BufferedReader br = new BufferedReader(
-				new FileReader("/Users/ravitej/git/solving_project_euler/Solution/src/inputs/problem_54.txt"))) {
+//				new FileReader("/Users/ravitej/git/solving_project_euler/Solution/src/inputs/problem_54.txt_sample"))) {
 
-			List<String> cards = Arrays.asList(br.readLine().split(" "));
+			new FileReader("/Users/ravitej/git/solving_project_euler/Solution/src/inputs/problem_54.txt"))) {
 
-			List<String> playerA = cards.subList(0, 5);
-			List<String> playerB = cards.subList(5, 10);
+			//sample 4D 6S 9H QH QC 3D 6D 7H QD QS
+			int count = 0;
+			int junk = 0;
+			String input;
+			while ((input = br.readLine()) != null) {
 
-			System.out.println("Player A: " + playerA);
-			System.out.println("Player B: " + playerB);
+				List<String> cards = Arrays.asList(input.split(" "));
 
-			System.out.println(compareHands(playerA, playerB));
+				PokerGame game = new PokerGame(2, cards);
+
+				if (game.winner() == 0)
+					count++;
+				
+				if(game.winner() == 1)
+					junk++;
+
+			}
+
+			System.out.println("Player 1 wins " + count + " games");
+			System.out.println("Player 2 wins " + junk + " games");
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	private boolean compareHands(List<String> playerA, List<String> playerB) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
