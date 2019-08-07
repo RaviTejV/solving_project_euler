@@ -1,7 +1,7 @@
 package utils;
 
+import java.math.BigInteger;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class StringUtils {
 
@@ -27,5 +27,9 @@ public class StringUtils {
 
 	public static int digitHash(Integer i) {
 		return i.toString().chars().sorted().boxed().reduce(0, (a, b) -> a * 10 + b);
+	}
+
+	public static int bigDigitHash(BigInteger i) {
+		return i.toString().chars().sorted().boxed().map(s -> s.toString()).reduce("", (a, b) -> a + "" + b).hashCode();
 	}
 }
