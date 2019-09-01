@@ -108,4 +108,18 @@ public class MathFunctions {
 		return returnVal;
 	}
 
+	public static Integer totientFunction(int i) {
+		Set<Long> primeFactors = getPrimeFactors((long) i);
+		
+		Long returnVal = (long) i;
+		
+		for(Long prime: primeFactors){
+			
+			returnVal = returnVal * (prime - 1);
+			returnVal = returnVal / prime.intValue();
+		}
+		
+		return returnVal.intValue();
+	}
+
 }
