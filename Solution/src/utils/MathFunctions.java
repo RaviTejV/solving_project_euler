@@ -56,6 +56,28 @@ public class MathFunctions {
 		return returnSet;
 	}
 
+	public static Set<Long> getPrimeFactorsFast(Long x) {
+		List<Long> primes = pg.getAllPrimesTill((int) Math.floor(Math.sqrt(x)) + 1L);
+
+		Set<Long> returnSet = new TreeSet<>();
+
+		for (Long prime : primes) {
+			while (x % prime == 0) {
+				x /= prime;
+				returnSet.add(prime);
+			}
+
+			if (x == 1)
+				break;
+		}
+		
+		if(x!=1){
+			returnSet.add(x);
+		}
+
+		return returnSet;
+	}
+
 	public static List<Integer> getAllDivisors(Integer x) {
 
 		List<Integer> retList = new ArrayList<>();
@@ -110,16 +132,33 @@ public class MathFunctions {
 
 	public static Integer totientFunction(int i) {
 		Set<Long> primeFactors = getPrimeFactors((long) i);
-		
+
 		Long returnVal = (long) i;
-		
-		for(Long prime: primeFactors){
-			
+
+		for (Long prime : primeFactors) {
+
 			returnVal = returnVal * (prime - 1);
 			returnVal = returnVal / prime.intValue();
 		}
-		
+
 		return returnVal.intValue();
 	}
 
+	public static Integer totientFunctionFast(int i) {
+
+		if (pg.isPrimeLong((long) i))
+			return (i - 1);
+
+		Set<Long> primeFactors = getPrimeFactorsFast((long) i);
+
+		Long returnVal = (long) i;
+
+		for (Long prime : primeFactors) {
+
+			returnVal = returnVal * (prime - 1);
+			returnVal = returnVal / prime.intValue();
+		}
+
+		return returnVal.intValue();
+	}
 }

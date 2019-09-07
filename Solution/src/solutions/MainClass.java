@@ -5,7 +5,7 @@ public class MainClass {
 	public static void main(String[] args) {
 
 		try {
-			new SolutionFor68().solve();
+			new SolutionFor99().solve();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

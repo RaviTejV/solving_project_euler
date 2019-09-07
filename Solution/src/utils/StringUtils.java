@@ -24,6 +24,12 @@ public class StringUtils {
 				.count() == x.toString().length();
 
 	}
+	
+	public static boolean isPermutation(Integer a, Integer b) {
+
+		return digitHash(a) == digitHash(b);
+
+	}
 
 	public static int digitHash(Integer i) {
 		return i.toString().chars().sorted().boxed().reduce(0, (a, b) -> a * 10 + b);
