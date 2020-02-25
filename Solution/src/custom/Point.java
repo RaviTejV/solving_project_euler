@@ -1,8 +1,8 @@
 package custom;
 
 public class Point {
-	int x;
-	int y;
+	public final int x;
+	public final int y;
 
 	public Point(int x, int y) {
 		this.x = x;
@@ -21,7 +21,23 @@ public class Point {
 
 		Double slope = Math.atan((double) y / x);
 
-		return x < 0 ? Math.PI + slope : slope;
+		// slope in 1st quadrant = 0 - inf => 0 - pi/2
 
+		double ret = 0.0;
+
+		if (x > 0 && y > 0)
+			ret = slope;
+
+		// second quadrant = -inf - 0 => +pi => dpi/2 => pi
+
+		if (x < 0)
+			ret = Math.PI + slope;
+
+		// fourth quadrant - inf - 0 => +2pi => 3pi/2 to 2pi
+
+		if (x > 0 && y < 0)
+			ret = slope + Math.PI * 2;
+
+		return ret;
 	}
 }
