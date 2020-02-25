@@ -1,4 +1,4 @@
-package customClasses;
+package custom;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import customClasses.PythogoreanTriplet;
+import custom.PythogoreanTriplet;
 
 public class SolutionFor39 implements Solution {
 

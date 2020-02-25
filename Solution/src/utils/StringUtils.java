@@ -2,6 +2,8 @@ package utils;
 
 import java.math.BigInteger;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class StringUtils {
 
@@ -24,7 +26,7 @@ public class StringUtils {
 				.count() == x.toString().length();
 
 	}
-	
+
 	public static boolean isPermutation(Integer a, Integer b) {
 
 		return digitHash(a) == digitHash(b);
@@ -37,5 +39,27 @@ public class StringUtils {
 
 	public static int bigDigitHash(BigInteger i) {
 		return i.toString().chars().sorted().boxed().map(s -> s.toString()).reduce("", (a, b) -> a + "" + b).hashCode();
+	}
+
+	public static boolean isIncreasing(Integer x) {
+		List<Integer> a = Arrays.asList(x.toString().split("")).stream().mapToInt(Integer::parseInt).boxed()
+				.collect(Collectors.toList());
+
+		for (int i = 0; i < a.size() - 1; i++) {
+			if (a.get(i) > a.get(i + 1))
+				return false;
+		}
+		return true;
+	}
+
+	public static boolean isDecreasing(Integer x) {
+		List<Integer> a = Arrays.asList(x.toString().split("")).stream().mapToInt(Integer::parseInt).boxed()
+				.collect(Collectors.toList());
+
+		for (int i = 0; i < a.size() - 1; i++) {
+			if (a.get(i) < a.get(i + 1))
+				return false;
+		}
+		return true;
 	}
 }

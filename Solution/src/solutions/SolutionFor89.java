@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import customClasses.RomanNumeralsInterpreter;
+import custom.RomanNumeralsInterpreter;
 
 public class SolutionFor89 implements Solution {
 

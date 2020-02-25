@@ -1,4 +1,4 @@
-package customClasses;
+package custom;
 
 public class PythogoreanTriplet {
 

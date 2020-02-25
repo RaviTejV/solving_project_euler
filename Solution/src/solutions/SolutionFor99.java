@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import customClasses.Exponent;
+import custom.Exponent;
 
 public class SolutionFor99 implements Solution {
 

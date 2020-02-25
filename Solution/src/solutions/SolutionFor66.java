@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.google.common.base.Supplier;
 
-import customClasses.IrrationalResidue;
+import custom.IrrationalResidue;
 
 public class SolutionFor66 implements Solution {
 

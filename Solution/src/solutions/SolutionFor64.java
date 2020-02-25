@@ -3,8 +3,8 @@ package solutions;
 import java.util.HashSet;
 import java.util.Set;
 
-import customClasses.Fraction;
-import customClasses.Fractionable;
+import custom.Fraction;
+import custom.Fractionable;
 import utils.MathFunctions;
 
 public class SolutionFor64 implements Solution {
