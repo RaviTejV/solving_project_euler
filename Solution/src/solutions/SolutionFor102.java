@@ -48,7 +48,7 @@ public class SolutionFor102 implements Solution {
 				slopeDiffs.add(diff(slopes.get(1), slopes.get(2)));
 				slopeDiffs.add(diff(slopes.get(2), slopes.get(0)));
 
-				System.out.println(slopes + " " + Math.abs(slopes.get(2) - slopes.get(0)));
+				System.out.println(slopeDiffs + " " + Math.abs(slopes.get(2) - slopes.get(0)));
 
 				if (Math.abs(slopes.get(2) - slopes.get(0)) > Math.PI)
 					result++;
